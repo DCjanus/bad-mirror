@@ -1,0 +1,3 @@
+{$BAD_MIRROR_HOST}
+proxy /crates https://static.crates.io/
+log / stdout "{combined}"

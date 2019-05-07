@@ -1,0 +1,24 @@
+version: '2.0'
+services:
+  caddy:
+    image: "abiosoft/caddy:no-stats"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "./Caddyfile:/etc/Caddyfile"
+      - "caddy:/root/.caddy"
+    env_file:
+      - bad-mirror.env
+  index:
+    build: .
+    volumes:
+      - "index:/index"
+      - "./id_rsa:/root/.ssh/id_rsa"
+    env_file:
+      - bad-mirror.env
+    environment:
+      - BAD_MIRROR_INDEX=/index
+volumes:
+  caddy:
+  index:

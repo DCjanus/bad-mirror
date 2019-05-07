@@ -1,0 +1,6 @@
+# IDE
+.idea
+*.iml
+
+# git ssh private key
+id_rsa
