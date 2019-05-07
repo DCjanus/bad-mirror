@@ -34,7 +34,7 @@ if [[ ! -d "${index_dir}/.git" ]]; then
     git remote add origin ${origin};
     git fetch origin;
 
-    echo "{\"dl\":\"https://${download}/crates/{crate}/{crate}-{version}.crate\"}" > config.json
+    echo "{\"dl\":\"https://${download}/crates/{crate}/{crate}-{version}.crate\", \"api\":\"https://crates.io\"}" > config.json
     git config --local user.email "DCjanus@dcjanus.com"
     git config --local user.name "DCjanus"
     git commit --all --message "set download url"
